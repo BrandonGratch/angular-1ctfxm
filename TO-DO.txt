@@ -1,0 +1,1 @@
+Game component, divide into hands and play areas

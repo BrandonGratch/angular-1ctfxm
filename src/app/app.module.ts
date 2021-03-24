@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
@@ -20,12 +21,20 @@ import { MessagesComponent } from './messages/messages.component';
 import { PackageSearchComponent } from './package-search/package-search.component';
 import { UploaderComponent } from './uploader/uploader.component';
 
+// MY STUFF
+import { AppRoutingModule } from './app-routing.module';
+import { GameComponent } from './game/game.component';
+import { MaterialModule } from './material-module';
+
 import { httpInterceptorProviders } from './http-interceptors/index';
 
 @NgModule({
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
+    MaterialModule,
+    RouterModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
     HttpClientXsrfModule.withOptions({
@@ -52,6 +61,8 @@ import { httpInterceptorProviders } from './http-interceptors/index';
     MessagesComponent,
     UploaderComponent,
     PackageSearchComponent,
+    
+    GameComponent,
   ],
   providers: [
     AuthService,
